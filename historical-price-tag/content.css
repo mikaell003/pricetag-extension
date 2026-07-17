@@ -1,0 +1,62 @@
+.hpt-wrapper {
+  display: inline;
+  white-space: nowrap;
+}
+
+.hpt-inline-hidden {
+  text-decoration: line-through;
+  opacity: 0.55;
+  margin-right: 0.3em;
+}
+
+.hpt-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  color: #0a5c36;
+  background: #e3f5ea;
+  border: 1px solid #b9e3c8;
+  border-radius: 4px;
+  padding: 0 4px;
+  margin-left: 4px;
+  cursor: default;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.hpt-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 2147483647;
+  transition: opacity 0.12s ease;
+  pointer-events: none;
+}
+
+.hpt-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1a1a1a;
+}
+
+.hpt-badge:hover .hpt-tooltip {
+  visibility: visible;
+  opacity: 1;
+}

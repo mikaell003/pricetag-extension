@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <span class="icon">⏱</span>
+      <h1>Historical Price Tag</h1>
+    </header>
+
+    <label class="row toggle-row">
+      <span>Enabled</span>
+      <input type="checkbox" id="enabled">
+    </label>
+
+    <div class="row">
+      <label for="refYear">Compare prices to</label>
+      <div class="year-input">
+        <input type="range" id="refYearSlider" min="1913" max="2026" step="1">
+        <input type="number" id="refYear" min="1913" max="2026" step="1">
+      </div>
+      <div class="hostname" id="yearRangeNote"></div>
+    </div>
+
+    <div class="row">
+      <label>Currencies to detect on the page</label>
+      <div class="currency-list" id="currencyList"></div>
+    </div>
+
+    <div class="row">
+      <label>Badge style</label>
+      <div class="segmented">
+        <button data-style="icon" class="seg-btn">Icon ⏱</button>
+        <button data-style="inline" class="seg-btn">Inline text</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <label class="toggle-row">
+        <span>Disable on this site</span>
+        <input type="checkbox" id="disableSite">
+      </label>
+      <div class="hostname" id="hostname"></div>
+    </div>
+
+    <div class="converter">
+      <div class="converter-title">Quick convert</div>
+      <div class="converter-row">
+        <select id="quickCurrency"></select>
+        <input type="number" id="quickAmount" placeholder="Amount" value="100">
+        <span>in</span>
+        <input type="number" id="quickFromYear" placeholder="Year" value="2026">
+        <span>=</span>
+        <span id="quickResult" class="quick-result">—</span>
+        <span id="quickResultYear"></span>
+      </div>
+    </div>
+
+    <p class="footnote">Reload open tabs for changes to take effect. Data: BLS (USD), ONS (GBP), Eurostat/ECB (EUR), World Bank/KNBS (KES), annual averages.</p>
+  </div>
+  <script src="cpi-data.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
